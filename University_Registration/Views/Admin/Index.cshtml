@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Welcome Admin: @Session["CurrentAdminName"] </h2>
+<div class="jumbotron">
+    <h2>Waiting List</h2>
+    <p>@Html.ActionLink("Export to CSV", "ExportCSV", "Admin", new { status="Pending"}, null)</p>
+    <table>
+            <tr>
+                <th>Student ID</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Total Points</th>
+            </tr>
+
+        <tbody>
+            @foreach (var std in ViewBag.WaitingList)
+            {
+                <tr>
+                    <td>@std.StudentId</td>
+                    <td>@std.FirstName</td>
+                    <td>@std.Surname</td>
+                    <td>@std.Email</td>
+                    <td>@std.Status</td>
+                    <td>@std.TotalPoints</td>
+                    <td>
+                        @Html.ActionLink("Approve", "Approve", "Admin", new { id = std.StudentId }, null) |
+                        @Html.ActionLink("Reject", "Reject", "Admin", new { id = std.StudentId }, null)
+                    </td>
+                </tr>
+                <tr><td><hr/></td>  </tr>    
+            }
+        </tbody>
+    </table>
+    
+</div>
+
+<div class="jumbotron">
+    <h2>Approved List</h2>
+    <p>@Html.ActionLink("Export to CSV", "ExportCSV", "Admin", new { status = "Approved" }, null)</p>
+
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Total Points</th>
+        </tr>
+        <tbody>
+            @foreach (var std in ViewBag.ApprovedList)
+            {
+                <tr>
+                    <td>@std.StudentId</td>
+                    <td>@std.FirstName</td>
+                    <td>@std.Surname</td>
+                    <td>@std.Status</td>
+                    <td>@std.Email</td>
+                    <td>@std.TotalPoints</td>
+                    <td>
+                        @Html.ActionLink("Move to Waiting List", "MoveWait", "Admin", new { id = std.StudentId }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="jumbotron">
+    <h2>Rejected List</h2>
+    <p>@Html.ActionLink("Export to CSV", "ExportCSV", "Admin", new { status = "Rejected" }, null)</p>
+
+    <table>
+        <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Total Points</th>
+        </tr>
+        <tbody>
+            @foreach (var std in ViewBag.RejectedList)
+            {
+                <tr>
+                    <td>@std.StudentId</td>
+                    <td>@std.FirstName</td>
+                    <td>@std.Surname</td>
+                    <td>@std.Email</td>
+                    <td>@std.Status</td>
+                    <td>@std.TotalPoints</td>
+                    <td>
+                        @Html.ActionLink("Move to Waiting List", "MoveWait", "Admin", new { id = std.StudentId }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

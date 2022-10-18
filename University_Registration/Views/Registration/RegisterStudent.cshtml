@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "CreateNewAccount";
+
+}
+@*<script type="text/javascript" src="~/Scripts/script.js"></script>*@
+<h2>CreateNewAccount</h2>
+
+<div class="registration-div">
+
+    <form onsubmit="return validateRegistration()">
+
+        <label for="fname">Name</label>
+        <input type="text" name="fname" value="" id="fname" />
+        <br />
+
+        <label for="sname">Surname</label>
+        <input type="text" name="sname" value="" id="sname" />
+        <br />
+
+        <label for="address">Address</label>
+        <input type="text" name="address" value="" id="address" />
+        <br />
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" name="phoneNumber" value="" id="phoneNumber" />
+        <br />
+
+        <label for="DOB">Date Of Birth</label>
+        <input type="date" name="DOB" value="" id="DOB" />
+        <br />
+
+        <label for="guardianName">Guardian Name</label>
+        <input type="text" name="guardianName" value="" id="guardianName" />
+        <br />
+
+        <label for="emailAddress">Email Address</label>
+        <input type="text" name="emailAddress" value="" id="emailAddress" />
+        <br />
+
+        <label for="nid">NID</label>
+        <input type="text" name="nid" value="" id="nid" />
+        <br />
+        <div class="subj1">
+            <label for="subject1">Choose subject 1:</label>
+            <select name="subject1" id="subject1">
+                <option value="Maths">Maths</option>
+                <option value="French">French</option>
+                <option value="English">English</option>
+                <option value="Computer">Computer</option>
+            </select>
+            <label for="grade1">Enter Grade for Subject 1</label>
+            <input type="text" name="grade1" value="" id="grade1" maxlength="1" />
+        </div>
+
+        <div class="subj2">
+            <label for="subject2">Choose subject 2:</label>
+            <select name="subject2" id="subject2">
+                <option value="Maths">Maths</option>
+                <option value="French">French</option>
+                <option value="English">English</option>
+                <option value="Computer">Computer</option>
+            </select>
+            <label for="mark2">Enter Grade for Subject 2</label>
+            <input type="text" name="grade2" value="" id="grade2" maxlength="1" />
+        </div>
+        
+        <div class="subj3">
+            <label for="subject3">Choose subject 3:</label>
+            <select name="subject3" id="subject3">
+                <option value="Maths">Maths</option>
+                <option value="French">French</option>
+                <option value="English">English</option>
+                <option value="Computer">Computer</option>
+            </select>
+            <label for="grade3">Enter Grade for Subject 3</label>
+            <input type="text" name="grade3" value="" id="grade3" maxlength="1"/>
+        </div>
+
+        <input type="submit" name="registrationBtn" value="Register" id="registrationBtn" onclick="register()" />
+
+        <input type="reset" name="resetBtn" value="Reset" />
+        <br />
+
+        @*<p>@Html.ActionLink("Login", "Registration", "Registration")</p>*@
+
+    </form>
+</div>

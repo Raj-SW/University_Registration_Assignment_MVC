@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Landing Page";
+}
+
+<h2>Landing Page</h2>
+<p>Login</p>
+<div class="registration-div">
+
+    <form onsubmit="return loginValidation()">
+
+        <label for="AdminName">Admin Name</label>
+        <br />
+        <input type="text" name="AdminName" value="" id="AdminName"/>
+        <br />
+
+        <label for="password">Password</label>
+        <br />
+        <input type="password" name="password" value="" id="Password" />
+        <br />
+
+        <input type="submit" name="loginBtn" value="Login" id="loginBtn" onclick="login()"/>
+
+        <p>@Html.ActionLink("Register", "RegisterStudent", "Registration")</p>
+
+    </form>
+
+</div>
+
